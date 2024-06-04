@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import Contact, ContactForm
+from .models import ShopProduct
 
 
 def index(request):
@@ -10,8 +11,7 @@ def about(request):
     return render(request, 'about.html')
 
 
-def shop(request):
-    return render(request, 'shop.html')
+
 
 def services(request):
     return render(request, 'services.html')
@@ -26,6 +26,9 @@ def cart(request):
     return render(request, 'cart.html')
 
 
+def detail(request):
+    return render(request, 'product_detail.html')
+
 
 
 
@@ -38,4 +41,15 @@ def contact_view(request):
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
+
+
+
+def shop(request):
+    product = ShopProduct.objects.all()
+    return render(request, 'shop.html', {'product':product})
+
+def product_detail(request, slug):
+    products = ShopProduct.objects.get(slug__iexact=slug)
+    return render(request, 'product_detail.html', {'products': products})
+
 
