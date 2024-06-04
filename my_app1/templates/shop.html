@@ -59,9 +59,10 @@
 			{% for item in product %}
 			<!-- Start Column 1 -->
 			<div class="col-12 col-md-4 col-lg-3 mb-5">
-				<div class="all_product">
-				<a class="product-item" href="{{item.get_absolute_url}}">
+				<div class="all">
 
+					<a class="product-item" href="{{item.get_absolute_url}}">
+						
 						<div class="product-thumbnail-wrapper">
 							<img src="{{item.image.url}}" class="img-fluid product-thumbnail">
 						</div>
@@ -80,7 +81,7 @@
 
 <style>
 	.product-thumbnail-wrapper {
-		width: 300px;
+
 		height: 400px; /* Задайте необходимую высоту */
 		overflow: hidden;
 		position: relative;
@@ -89,16 +90,14 @@
 	}
 	
 	.product-thumbnail {
-		width: 300px;
-		height: 400px;
-		object-fit: cover; /* Это свойство обрезает изображение по центру */
-		object-position: center; /* Центрирование изображения */
+		height: 400px; /* Задайте необходимую высоту */
 		border-radius: 10px;
 	}
-	.all_product {
-		border: 2px rgb(233, 233, 233) solid;
-		border-radius: 15px;
+	.all{
+		border: 2px rgb(192, 192, 192) solid;
+		border-radius: 10px;
 	}
+
 </style>
 
 {% endblock content %}
