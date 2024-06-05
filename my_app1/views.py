@@ -9,7 +9,7 @@ def index(request):
         'title': ' index',
         'products': PopularProduct.objects.all(),
     }
-    return render(request, 'my_app1/index.html', context)
+    return render(request, 'index.html', context)
 
 
 def contact_view(request):
