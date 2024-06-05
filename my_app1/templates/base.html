@@ -41,15 +41,18 @@
                             src="{% static 'images/envelope-outline.svg' %}" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span>
                     </h3>
 
-                    <form action="#" class="row g-3">
+                    <form action="#" class="row g-3" method="post">
+                        {% csrf_token %}
                         <div class="col-auto">
                             <input type="text" class="form-control" placeholder="Enter your name">
+                            {{ form.name }}
                         </div>
                         <div class="col-auto">
                             <input type="email" class="form-control" placeholder="Enter your email">
+                            {{ form.email }}
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" type="submit">
                                 Отправить
                             </button>
                         </div>
